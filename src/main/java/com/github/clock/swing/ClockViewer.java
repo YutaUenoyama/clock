@@ -14,6 +14,7 @@ import java.awt.event.WindowEvent;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import com
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -48,7 +49,7 @@ public class ClockViewer extends JComponent{
     public void setDebugMode(boolean debugMode){
         this.debugMode = debugMode;
     }
-
+   
     public boolean isDebugMode(){
         return debugMode;
     }
@@ -117,7 +118,7 @@ public class ClockViewer extends JComponent{
         drawHand(g2, clock.getSecond(), length * 0.8);
 
         g2.setStroke(new BasicStroke(2));
-        g2.setColor(Color.RED);
+        g2.setColor(Color.decode(args.getLongHandColor()));
         drawHand(g2, clock.getMinute(), length * 0.7);
         // 長針の位置は，分の位置で表そうとすると，時間×5．
         // 24時間制のため，12で割った余りを時間とする．
